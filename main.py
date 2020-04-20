@@ -29,7 +29,6 @@ async def raiseError(err, level=-1):
 
 
 async def main():
-    await client.get_dialogs()
 
     # @events.register(events.NewMessage(func=lambda event: event.message.from_id == 777000))
     # async def messageFromTelegram(event):
@@ -53,6 +52,7 @@ async def main():
                 return
 
     await client.start()
+    await client.get_dialogs()
     client.add_event_handler(newCommand)
 
 
