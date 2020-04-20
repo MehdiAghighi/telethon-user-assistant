@@ -1,0 +1,5 @@
+__pycache__
+config.ini
+commands\__pycache__
+Vendor\__pycache__
+*.session*
