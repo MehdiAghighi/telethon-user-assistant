@@ -69,7 +69,6 @@ class Id(Command):
                 await self.sendMessageToProperty(
                     replyed_user.first_name,
                     replyed_user.id,
-                    c_type=1,
                 )
                 return True
             else:
