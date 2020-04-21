@@ -7,9 +7,9 @@ class Id(Command):
     def __init__(self, event, attributes, command):
         # User Given Attributes
         self.attributes = attributes
-        # All Class Attributes
+        # All Command Attributes
         self.myAttributes = {
-            # you should the default value or empty string for user required attributes
+            # you should the default value or `__req` string for user required attributes
             "to": "ch",
             "link": "y",
             "bt": "n"
