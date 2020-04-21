@@ -2,6 +2,16 @@
 
 telethon user assistant is somthing like a simple command line interface for telegram clients written in telethon
 
+## Installation
+first step is to install this project so you can use it
+`git clone https://github.com/MehdiAghighi/telethon-user-assistant.git`
+
+then, change `config.sample.ini` to `config.ini` and enter your `api_id` and `api_hash`
+
+as you can see there is a `USE_PROXY` and if it's `TRUE` you can enter your proxy hostname and port in `Vendor/Client.py`
+
+there is also a `LOG_CHANNEL` and you should set it to id of a channel that logs are going. it should be unprefixed (without `-100` at first of it)
+
 ## Commands
 in this project a command is exactly same with ones you write in cmd and starts with `!!`, like this:
 ```
@@ -223,6 +233,34 @@ await self.parseBtAttribute()
 
 you may ask yourself, "so what about `del` and `log` attributes?" 
 those attributes are global and defined in `Vendor/Parse.py` file. i am not gonna explain how they work because they are a part of code that there is no need to change them for you. if you want to have some more global attributes you can look at the codes.
+
+## Logs
+every command you enter will be logged into the `LOG_CHANNEL` that you entered in `config.ini` like this:
+```
+Sent id Command in 1049010249
+Event: 97903
+Attributes:
+{
+  del : True
+  log : True
+  bt : y
+  to : here
+  link : y
+}
+```
+and after the execution of command another message will be sent there which has one of these statuses:
+```
+Execution Succeded
+Event: 97903
+```
+```
+Execution Failed Due to an error
+Event: 97903
+```
+```
+Execution Done with a warning
+Event: 97903
+```
 
 
 # Author
