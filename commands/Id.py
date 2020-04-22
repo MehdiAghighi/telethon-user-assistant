@@ -27,14 +27,15 @@ class Id(Command):
         self.toChat = None
 
     async def parseAttributes(self):
-        # Calling The parent init__ method
-        await self.init__()
         # Parsing Attributes one by one
         await self.parseToAttribute()
         await self.parseLinkAttribute()
         await self.parseBtAttribute()
 
     async def execute(self):
+        # Calling The parent init__ method
+        await self.init__()
+        # Event Object
         event = self.event
         # Parsing All Attributes
         await self.parseAttributes()
